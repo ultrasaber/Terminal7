@@ -14,6 +14,12 @@ namespace Terminal7
             set;
         }
 
+        public T7String HeaderText
+        {
+            get;
+            set;
+        }
+
         public bool HasBorders
         {
             get;
@@ -73,7 +79,14 @@ namespace Terminal7
                         }
                         else
                         {
-                            output.Characters.Add(new T7Char('═', this.BorderForegroundColor, this.BorderBackgroundColor));
+                            if(y == 0 && this.HeaderText.Peek())
+                            {
+                                output.Characters.Add(this.HeaderText.GetNextChar());
+                            }
+                            else
+                            {
+                                output.Characters.Add(new T7Char('═', this.BorderForegroundColor, this.BorderBackgroundColor));
+                            }
                         }
                     }
                     else if(this.HasBorders && (i == 0 || i == this.Width - 1))
@@ -101,6 +114,7 @@ namespace Terminal7
             this.HasBorders = hasBorders;
             this.BorderForegroundColor = foregroundColor;
             this.BorderBackgroundColor = backgroundColor;
+            this.HeaderText = new T7String(new List<T7Char>());
         }
     }
 }

@@ -11,40 +11,24 @@ namespace T7Test
     {
         static void Main(string[] args)
         {
-            Console.WindowHeight = Console.LargestWindowHeight - 10;
-            Console.WindowWidth = Console.LargestWindowWidth - 10;
+            Console.WindowHeight = 40;
+            Console.WindowWidth = 80;
 
-            T7Console.DrawBox(10, 5, ConsoleColor.Black, ConsoleColor.DarkYellow);
-            T7Console.DrawBox(8, 3, ConsoleColor.Black, ConsoleColor.Yellow, 1, 1);
-            T7Console.DrawBox(6, 1, ConsoleColor.White, ConsoleColor.Black, 2, 2);
+            Console.BufferHeight = 40;
+            Console.BufferWidth = 80;
 
-            Console.ResetColor();
-            Console.Write('═');
-            Console.Write('╔');
-            Console.Write('╚');
-            Console.Write('╗');
-            Console.Write('╝');
-            Console.Write('║');
+            Console.CursorVisible = false;
+            Console.Title = "Heavenspire";
 
-            T7Console.DrawBox(25, 25, ConsoleColor.White, ConsoleColor.Red, 20, 15);
+            T7Label title = new T7Label(new T7String(" H E A V E N S P I R E "), true, 25, 3, ConsoleColor.White, ConsoleColor.Black, 27, 10);
+            title.BorderForegroundColor = ConsoleColor.Blue;
+            title.Draw();
 
-            T7String testString = new T7String("hello world", ConsoleColor.White, ConsoleColor.Blue);
-
-            while(testString.Peek())
-            {
-                testString.GetNextChar().Write();
-                Console.Write("\n");
-            }
-            Console.WriteLine(testString.ToString());
-
-            Console.ResetColor();
-            T7Label testLabel = new T7Label(new T7String("hello world", ConsoleColor.Green, ConsoleColor.Magenta), false, 8, 10, ConsoleColor.Red, ConsoleColor.White, 60, 5);
-            testLabel.Draw();
-
-            Console.ResetColor();
-            T7Label testLabel2 = new T7Label(new T7String("* Enter town\n* Don't"), true, 40, 4, ConsoleColor.White, ConsoleColor.Magenta, 30, 30);
-            testLabel2.BorderForegroundColor = ConsoleColor.Blue;
-            testLabel2.Draw();
+            T7Label mainMenu = new T7Label(new T7String("* New Game\n* Continue\n* Clear Data\n* Quit"), true, 25, 6, ConsoleColor.White, ConsoleColor.Black, 27, 13);
+            mainMenu.BorderForegroundColor = ConsoleColor.Blue;
+            mainMenu.BorderBackgroundColor = ConsoleColor.Black;
+            mainMenu.HeaderText = new T7String("Main Menu", ConsoleColor.Blue, ConsoleColor.Black);
+            mainMenu.Draw();
 
             Console.ReadKey();
         }
