@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminal7", "Terminal7\Terminal7.csproj", "{6703BB97-CAAB-4D7A-AAD7-2DE0719BD0C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T7Test", "T7Test\T7Test.csproj", "{6465C4CF-9F20-41A7-83D3-79A559286E68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6703BB97-CAAB-4D7A-AAD7-2DE0719BD0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6703BB97-CAAB-4D7A-AAD7-2DE0719BD0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6703BB97-CAAB-4D7A-AAD7-2DE0719BD0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6703BB97-CAAB-4D7A-AAD7-2DE0719BD0C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6465C4CF-9F20-41A7-83D3-79A559286E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6465C4CF-9F20-41A7-83D3-79A559286E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6465C4CF-9F20-41A7-83D3-79A559286E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6465C4CF-9F20-41A7-83D3-79A559286E68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
