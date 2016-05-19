@@ -45,6 +45,7 @@
     <Compile Include="T7Console.cs" />
     <Compile Include="T7Box.cs" />
     <Compile Include="T7Label.cs" />
+    <Compile Include="T7Menu.cs" />
     <Compile Include="T7String.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

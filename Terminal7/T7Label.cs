@@ -43,18 +43,27 @@ namespace Terminal7
             Console.CursorTop = this.PositionY;
             T7String formattedLines;
 
-            if(this.HasBorders)
+            if(this.Text.ToString().Split('\n').Length > 1)
             {
-                formattedLines = this.Text.GetFormattedLines(this.Width-2, this.ForegroundColor, this.BackgroundColor);
+                if (this.HasBorders)
+                {
+                    formattedLines = this.Text.GetFormattedLines(this.Width - 2, this.ForegroundColor, this.BackgroundColor);
+                }
+                else
+                {
+                    formattedLines = this.Text.GetFormattedLines(this.Width, this.ForegroundColor, this.BackgroundColor);
+                }
             }
             else
             {
-                formattedLines = this.Text.GetFormattedLines(this.Width, this.ForegroundColor, this.BackgroundColor);
+                formattedLines = this.Text;
             }
+
 
             for (int y = 0; y < this.Height; y++)
             {
                 Console.CursorLeft = this.PositionX;
+                this.HeaderText.CharPosition = 0;
 
                 T7String output = new T7String(new List<T7Char>());
                 for (int i = 0; i < this.Width; i++)
@@ -102,7 +111,12 @@ namespace Terminal7
                         output.Characters.Add(new T7Char(' ', this.ForegroundColor, this.BackgroundColor));
                     }
                 }
-                output.Characters.Add(new T7Char('\n'));
+
+                if(y < this.Height - 1)
+                {
+                    output.Characters.Add(new T7Char('\n'));
+                }
+                
                 output.Write();
             }
         }
