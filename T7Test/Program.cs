@@ -24,7 +24,9 @@ namespace T7Test
             title.BorderForegroundColor = ConsoleColor.DarkBlue;
             title.Draw();
 
-            T7Label statusBar = new T7Label(new T7String(" John  HP:127  MP:127  Invulnerable\n Rose  HP:127  MP:127  Invulnerable\n Dave  HP:127  MP:127  Invulnerable\n Jade  HP:127  MP:127  Invulnerable", ConsoleColor.White, ConsoleColor.Black), true, 79, 6, ConsoleColor.White, ConsoleColor.Black, 0, 34);
+
+
+            T7Label statusBar = new T7Label(new T7String(" John  HP:███▒▒▒▒▒▒▒  MP:███▒▒▒▒▒▒▒  Invulnerable\n Rose  HP:███▒▒▒▒▒▒▒  MP:███▒▒▒▒▒▒▒  Invulnerable\n Dave  HP:███▒▒▒▒▒▒▒  MP:███▒▒▒▒▒▒▒  Invulnerable\n Jade  HP:███▒▒▒▒▒▒▒  MP:███▒▒▒▒▒▒▒  Invulnerable", ConsoleColor.Green, ConsoleColor.Black), true, 79, 6, ConsoleColor.White, ConsoleColor.Black, 0, 34);
             statusBar.BorderForegroundColor = ConsoleColor.DarkBlue;
             statusBar.HeaderText = new T7String("[ Party Status ]", ConsoleColor.Gray, ConsoleColor.Black);
             statusBar.Draw();
@@ -39,7 +41,12 @@ namespace T7Test
             testMenu.HeaderText = new T7String("[ Main Menu ]", ConsoleColor.Gray, ConsoleColor.Black);
             Console.Write(testMenu.GetChoice());
 
-            T7Label continueMessage = new T7Label(new T7String(" Press any key to continue...", ConsoleColor.White, ConsoleColor.Black), true, 79, 3, ConsoleColor.White, ConsoleColor.Black, 0, 0);
+            T7Input inputMock = new T7Input(new T7String("", ConsoleColor.White, ConsoleColor.Black), true, 40, 3, ConsoleColor.White, ConsoleColor.Black, ypos:10);
+            inputMock.HeaderText = new T7String("[ Input Box ]", ConsoleColor.White, ConsoleColor.Black);
+            inputMock.BorderForegroundColor = ConsoleColor.DarkBlue;
+            inputMock.GetInput();
+
+            T7Label continueMessage = new T7Label(new T7String(" Press any key to exit...", ConsoleColor.White, ConsoleColor.Black), true, 79, 3, ConsoleColor.White, ConsoleColor.Black, 0, 0);
             continueMessage.BorderForegroundColor = ConsoleColor.DarkGray;
             continueMessage.Draw();
 
